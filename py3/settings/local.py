@@ -1,11 +1,11 @@
 """Localの開発環境向けのsettingsモジュールです
 """
 
-from curama.settings.common import *
+from py3.settings.common import *
 from aldjemy.types import (
     simple,
 )
-from curama.lib.aldjemy.custom_types import (
+from py3.lib.aldjemy.custom_types import (
     SQLiteDate,
     SQLiteDateTime,
 )
