@@ -1,0 +1,6 @@
+.coverage
+*.pyc
+*.sqlite3
+docs/build
+docs/html
+docs/update_docs.sh
