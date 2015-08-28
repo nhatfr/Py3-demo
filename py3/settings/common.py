@@ -1,8 +1,3 @@
-"""各環境のsettingsから呼び出される共通設定を定義します
-
-  環境ごとのsettingsはこのモジュールを必ず呼び出します
-"""
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
@@ -21,7 +16,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'django_extensions',
-    'curama.apps',
+    'py3.apps',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +38,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'curama.urls'
+ROOT_URLCONF = 'py3.urls'
 
 TEMPLATES = [
     {
@@ -61,7 +56,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'curama.wsgi.application'
+WSGI_APPLICATION = 'py3.wsgi.application'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

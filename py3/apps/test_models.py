@@ -1,5 +1,0 @@
-"""ModelとFactoryのテストモジュール
-"""
-
-
-import pytest
