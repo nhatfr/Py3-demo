@@ -1,6 +1,7 @@
 .coverage
 *.pyc
 *.sqlite3
+.idea
 docs/build
 docs/html
 docs/update_docs.sh
