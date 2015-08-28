@@ -1,0 +1,12 @@
+"""REST APIで授受したjsonデータが仕様通りか確認するのに利用する共通ライブラリです
+
+jsonスキーマの確認はcolanderライブラリを利用します
+このPackageには各Validation処理で利用する独自に拡張したデータ型などを
+定義します
+
+validatorルール
+
+colanderのvalidatorの定義はSchemaとNoneそれぞれに設定することができます。
+Schemaに定義した場合はvalidatorオブジェクトは複数のFieldの値へアクセスすることができ、
+各Nodeに設定したvalidatorはNodeに対するinput値のみアクセスできます
+"""
