@@ -1,6 +1,7 @@
 from py3.apps.models import (
     Category,
     Service,
+    Store,
 )
 
 
@@ -37,5 +38,27 @@ class ServiceListAppModel(object):
 class CategoryListAppModel(object):
 
     @classmethod
-    def get_category_list(cls):
-       return Category.objects.all()
+    def get_store_list(cls, category=None):
+        if category:
+            return Store.sa.query(Category.sa, Store.sa).filter(Category.sa.name == category).distinct()
+        return Category.sa.query(Category.sa).distinct()
+
+# class StoreListAppModel(object):
+#
+#     @classmethod
+#     def get_store_list(cls, search_query):
+#         queryset = cls._get_queryset()
+#         queryset = cls._filter(queryset, search_query)
+#         return queryset
+#
+#     @classmethod
+#     def _get_queryset(cls):
+#         store_list_qa = Category.sa.query(Store.sa)
+#         return store_list_qa
+#
+#     @classmethod
+#     def _filter(cls, queryset, search_query):
+#         run_cls_method = [attr for attr in dir(cls) if '_filter_' in attr]
+#         for method in run_cls_method:
+#             queryset = getattr(cls, method)(queryset, **search_query)
+#         return queryset
