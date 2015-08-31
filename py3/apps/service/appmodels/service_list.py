@@ -32,3 +32,10 @@ class ServiceListAppModel(object):
         if not category:
             return queryset
         return queryset.filter(Category.sa.name == category)
+
+
+class CategoryListAppModel(object):
+
+    @classmethod
+    def get_category_list(cls):
+       return Category.objects.all()

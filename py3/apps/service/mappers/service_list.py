@@ -3,6 +3,7 @@ from bpmappers.fields import (
     NonKeyDelegateField,
     RawField,
 )
+from py3.apps.models import Category
 
 
 class ServiceMapperForServiceList(Mapper):
@@ -32,3 +33,9 @@ class ServiceListMapper(Mapper):
 
     def filter_service_category(self):
         return self.data[1]
+
+
+class CategoryListMapper(Mapper):
+    name = RawField('name')
+    description = RawField('description')
+
