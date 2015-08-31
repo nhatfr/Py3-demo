@@ -2,9 +2,9 @@ from bpmappers import Mapper
 from bpmappers.fields import (
     NonKeyDelegateField,
     RawField,
+    ListDelegateField,
 )
 from py3.apps.models import Category
-
 
 class ServiceMapperForServiceList(Mapper):
     service_id = RawField('id')
@@ -36,6 +36,15 @@ class ServiceListMapper(Mapper):
 
 
 class CategoryListMapper(Mapper):
-    name = RawField('name')
-    description = RawField('description')
+    name = RawField('Category.name')
+    store = RawField('Store.name')
+    # description = RawField('description')
+    # stores = ListDelegateField(StoreMapperForServiceList)
 
+#
+# class StoreListMapper(Mapper):
+#     name = RawField('name')
+#     description = RawField('description')
+#     phone_number = RawField('phone_number')
+#     address = RawField('address')
+#     categories = ListDelegateField(CategoryListMapper)

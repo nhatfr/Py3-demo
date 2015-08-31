@@ -26,10 +26,28 @@ class ServiceListView(FramgiaAPIView):
 
 class CategoryListView(FramgiaAPIView):
 
-    def get(self, request):
-        qs = CategoryListAppModel.get_category_list()
+    def get(self, request, category=None):
+        search_query = self.convert_querydict_to_dict(request.QUERY_PARAMS)
+
+        if category:
+            search_query['category'] = category
+            qs = CategoryListAppModel.get_store_list(category)
+        else:
+            qs = CategoryListAppModel.get_store_list()
+
         data = [CategoryListMapper(category).as_dict() for category in qs]
         self.get_response_data(data)
         return Response(self.response_data)
 
-
+#
+# class StoreListView(FramgiaAPIView):
+#
+#     def get(self, resquest, category=None):
+#         search_query = self.convert_querydict_to_dict(resquest.QUERY_PARAMS)
+#         if category:
+#             search_query['category'] = category
+#
+#         qs = StoreListAppModel.get_store_list(search_query)
+#         data = [StoreListMapper(store).as_dict() for store in qs]
+#         self.get_response_data(data)
+#         return  Response(self.response_data)
