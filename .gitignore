@@ -6,3 +6,6 @@ docs/build
 docs/html
 docs/update_docs.sh
 db.sqlite_demo
+py3/settings/__pycache__/__init__.cpython-34.pyc
+modified:   py3/settings/__pycache__/local.cpython-34.pyc
+py3/settings/__pycache__/common.cpython-34.pyc
