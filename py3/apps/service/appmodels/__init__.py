@@ -1,5 +1,3 @@
-"""appmodelsモジュールのショートカット
-"""
-from curama.apps.service.appmodels.service_list import (
+from py3.apps.service.appmodels.service_list import (
     ServiceListAppModel
 )
