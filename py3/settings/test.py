@@ -2,11 +2,6 @@ from py3.settings.common import *
 from aldjemy.types import (
     simple,
 )
-from py3.lib.aldjemy.custom_types import (
-    SQLiteDate,
-    SQLiteDateTime,
-)
-
 
 DEBUG = False
 
@@ -20,8 +15,4 @@ DATABASES = {
 
 ALDJEMY_ENGINES = {
     'sqlite3': 'sqlite+pysqlite'
-}
-
-ALDJEMY_DATA_TYPES = {
-    'DateTimeField': simple(SQLiteDateTime)
 }
