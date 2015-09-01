@@ -35,16 +35,11 @@ class ServiceListMapper(Mapper):
         return self.data[1]
 
 
-class CategoryListMapper(Mapper):
+class CategoryForStoreMapper(Mapper):
     name = RawField('Category.name')
     store = RawField('Store.name')
-    # description = RawField('description')
-    # stores = ListDelegateField(StoreMapperForServiceList)
 
-#
-# class StoreListMapper(Mapper):
-#     name = RawField('name')
-#     description = RawField('description')
-#     phone_number = RawField('phone_number')
-#     address = RawField('address')
-#     categories = ListDelegateField(CategoryListMapper)
+
+class CategoryMapper(Mapper):
+    name = RawField('name')
+    description = RawField('description')

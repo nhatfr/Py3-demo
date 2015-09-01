@@ -1,7 +1,7 @@
 from rest_framework.response import Response
 from py3.apps.service.appmodels import ServiceListAppModel
 from py3.apps.service.mappers import ServiceListMapper
-from py3.apps.service.mappers.service_list import CategoryListMapper
+from py3.apps.service.mappers.service_list import  CategoryForStoreMapper, CategoryMapper
 from py3.apps.service.appmodels.service_list import CategoryListAppModel
 
 from py3.lib.rest_framework.custom_views import FramgiaAPIView
@@ -32,10 +32,11 @@ class CategoryListView(FramgiaAPIView):
         if category:
             search_query['category'] = category
             qs = CategoryListAppModel.get_store_list(category)
+            data = [CategoryForStoreMapper(category).as_dict() for category in qs]
         else:
             qs = CategoryListAppModel.get_store_list()
+            data = [CategoryMapper(category).as_dict() for category in qs]
 
-        data = [CategoryListMapper(category).as_dict() for category in qs]
         self.get_response_data(data)
         return Response(self.response_data)
 
