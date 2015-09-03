@@ -3,7 +3,6 @@ from unittest.mock import patch, MagicMock
 
 
 class TestServiceListAppModel(object):
-
     def _getTargetClass(self):
         from py3.apps.service.appmodels import ServiceListAppModel
         return ServiceListAppModel
@@ -42,3 +41,26 @@ class TestServiceListAppModel(object):
         else:
             call_arg = queryset.filter.call_args[0][0]
             assert str(call_arg) == str(expected_obj)
+
+
+class TestCategoryListAppModel(object):
+
+    def _getTargetClass(self):
+        from py3.apps.service.appmodels import CategoryListAppModel
+        return CategoryListAppModel
+
+    @pytest.mark.parametrize('input, expected', [
+        ("Software", 'Software'),
+        (None, 'Software'),
+    ])
+    def test_get_store_list(self, input, expected):
+        from py3.apps.models import Category, Store
+        if input:
+            expected_obj = Store.sa.query(Category.sa, Store.sa).filter(Category.sa.name == expected).distinct()
+        else:
+            expected_obj = Category.sa.query(Category.sa).distinct()
+
+        cls_ = self._getTargetClass()
+        result = cls_.get_store_list(input)
+
+        assert str(result) == str(expected_obj)
