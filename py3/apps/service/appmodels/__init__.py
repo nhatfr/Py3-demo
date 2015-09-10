@@ -1,3 +1,5 @@
 from py3.apps.service.appmodels.service_list import (
-    ServiceListAppModel
+    ServiceListAppModel,
+    CategoryListAppModel,
+    StoreListAppModel,
 )

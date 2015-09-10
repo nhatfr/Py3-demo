@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 
 class FramgiaAPIView(APIView):
 
-    response_data = dict(links={}, results={})
+    response_data = dict(results={}, errors=[])
 
     def get_response_data(self, data):
         self.response_data['results'] = data

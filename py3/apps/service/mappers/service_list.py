@@ -43,3 +43,14 @@ class CategoryForStoreMapper(Mapper):
 class CategoryMapper(Mapper):
     name = RawField('name')
     description = RawField('description')
+
+class StoreListMapper(Mapper):
+    name = RawField('name')
+
+class ServiceForeStoreMapper(Mapper):
+    name = RawField('name')
+
+
+class ServiceMapper(Mapper):
+    name = RawField('name')
+    prince = RawField('price')
