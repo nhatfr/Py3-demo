@@ -7,6 +7,7 @@ Microservice: Review
 
 .. _review-001:
 
+
 Phương thức GET
 ================================
 URL của phương thức get
@@ -213,9 +214,9 @@ Response Sample
         }
     }
 
-Bây giờ tao muốn phải đảm nhiệm được những request như sau:
+Bây giờ muốn phải đảm nhiệm được những request như sau:
 -----------------------------------------------------------
-- Tao muốn có thể hiển thị danh sách những review mới nhất trong 1 category , trong 1 category_type, 1 store, 1 service
+- muốn có thể hiển thị danh sách những review mới nhất trong 1 category , trong 1 category_type, 1 store, 1 service
 
   :: url: http://curama.jp/{category}/{service_type}/{store_id}/{service_id}/reviews/?params
 
